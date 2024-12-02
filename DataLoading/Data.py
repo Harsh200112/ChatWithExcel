@@ -1,8 +1,6 @@
 import os
 import faiss
-import requests
 import warnings
-import pandas as pd
 import nest_asyncio
 from llama_parse import LlamaParse
 from llama_index.core import Settings
@@ -15,7 +13,7 @@ warnings.filterwarnings("ignore")
 
 def get_data(file_path):
     parser = LlamaParse(
-        api_key=os.environ.get("LLAMA_CLOUD_API_KEY"),
+        api_key=os.environ.get('LLAMA_CLOUD_API_KEY'),
         result_type="markdown"
     )
 

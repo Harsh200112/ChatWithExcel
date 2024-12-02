@@ -17,7 +17,10 @@ def init_llm(model_name):
 
 @st.cache_resource
 def load_index(selected_model):
-    get_data('C:/Users/Harsh Soni/Downloads/ClienterAI/processed_data.csv')
+    curr_direc = os.getcwd()
+    file_path = os.path.join(curr_direc, 'processed_data.csv')
+    # print(file_path)
+    get_data(file_path)
     model = init_llm(selected_model)
     embedding_model = HuggingFaceEmbedding(model_name="BAAI/bge-small-en-v1.5")
 
