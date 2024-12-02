@@ -2,6 +2,7 @@ import os
 import warnings
 import nest_asyncio
 import streamlit as st
+from dotenv import load_dotenv
 from DataLoading.Data import get_data
 from llama_index.core import Settings
 from llama_index.llms.groq import Groq
@@ -10,10 +11,11 @@ from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from llama_index.core import StorageContext, load_index_from_storage
 
 nest_asyncio.apply()
+load_dotenv()
 warnings.filterwarnings("ignore")
 
 def init_llm(model_name):
-    return Groq(model=model_name, api_key=os.environ.get("GROQ_API_KEY"))
+    return Groq(model=model_name, api_key=os.getenv("GROQ_API_KEY"))
 
 @st.cache_resource
 def load_index(selected_model):

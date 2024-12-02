@@ -2,18 +2,21 @@ import os
 import faiss
 import warnings
 import nest_asyncio
+from dotenv import load_dotenv
 from llama_parse import LlamaParse
 from llama_index.core import Settings
 from llama_index.vector_stores.faiss import FaissVectorStore
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from llama_index.core import VectorStoreIndex, StorageContext
 
+load_dotenv()
+
 nest_asyncio.apply()
 warnings.filterwarnings("ignore")
 
 def get_data(file_path):
     parser = LlamaParse(
-        api_key=os.environ.get('LLAMA_CLOUD_API_KEY'),
+        api_key=os.getenv('LLAMA_CLOUD_API_KEY'),
         result_type="markdown"
     )
 
