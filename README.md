@@ -73,7 +73,7 @@ The pipeline is built with advanced tools like FAISS, LLMs and Llama Index for e
    ```
 
 ### Project Structure
-
+```bash
 ChatWithExcel/
 ├── data/                   # Dataset folder
 ├── scripts/                # Data preprocessing and ingestion scripts
@@ -82,7 +82,7 @@ ChatWithExcel/
 ├── README.md               # Project documentation
 ├── requirements.txt        # Python dependencies
 └── app.py                  # Main application file
-
+```
 
 ### Future Work
 - Expand retrieval capabilities for larger datasets.
